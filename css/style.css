@@ -3243,3 +3243,130 @@ main {
     min-height: 0 !important;
     overflow: visible !important;
 }
+/* =====================================================
+   THESIS PROJECT - SPECIAL STYLING
+   ===================================================== */
+
+/* Main Thesis Card */
+.portfolio-card.portfolio-thesis {
+    position: relative;
+    background: linear-gradient(145deg, rgba(0, 174, 255, 0.06), rgba(7, 17, 31, 0.95));
+    border: 2px solid rgba(0, 174, 255, 0.35);
+    box-shadow: 0 0 40px rgba(0, 174, 255, 0.08), inset 0 0 40px rgba(0, 174, 255, 0.03);
+    overflow: hidden;
+}
+
+/* Glow Border Animation */
+.portfolio-card.portfolio-thesis::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #00bfff, #0077ff, #00bfff);
+    background-size: 300% 300%;
+    z-index: -1;
+    animation: gradientBorder 4s ease-in-out infinite;
+    opacity: 0.6;
+}
+
+@keyframes gradientBorder {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Thesis Badge on Top */
+.portfolio-thesis-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    background: var(--gradient);
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    align-self: flex-start;
+    box-shadow: 0 4px 20px rgba(0, 174, 255, 0.3);
+}
+
+.portfolio-thesis-badge i {
+    font-size: 14px;
+}
+
+/* Thesis Badge Colors (Gold, Blue, Pink, Purple, Yellow, Green) */
+.thesis-badge-gold {
+    background: rgba(251, 191, 36, 0.15) !important;
+    border-color: rgba(251, 191, 36, 0.3) !important;
+    color: #fbbf24 !important;
+}
+
+.thesis-badge-blue {
+    background: rgba(59, 130, 246, 0.15) !important;
+    border-color: rgba(59, 130, 246, 0.3) !important;
+    color: #60a5fa !important;
+}
+
+.thesis-badge-pink {
+    background: rgba(236, 72, 153, 0.15) !important;
+    border-color: rgba(236, 72, 153, 0.3) !important;
+    color: #f472b6 !important;
+}
+
+.thesis-badge-purple {
+    background: rgba(139, 92, 246, 0.15) !important;
+    border-color: rgba(139, 92, 246, 0.3) !important;
+    color: #a78bfa !important;
+}
+
+.thesis-badge-yellow {
+    background: rgba(251, 191, 36, 0.12) !important;
+    border-color: rgba(251, 191, 36, 0.25) !important;
+    color: #fcd34d !important;
+}
+
+.thesis-badge-green {
+    background: rgba(52, 211, 153, 0.15) !important;
+    border-color: rgba(52, 211, 153, 0.3) !important;
+    color: #34d399 !important;
+}
+
+/* Mini Table - Enhanced */
+.portfolio-mini-table {
+    margin: 10px 0 14px;
+    padding: 12px 14px;
+    background: rgba(0, 174, 255, 0.04);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 174, 255, 0.1);
+}
+
+.mini-table-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.mini-table-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.mini-cell {
+    padding: 3px 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 4px;
+    font-size: 12px;
+    color: var(--text-light);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.mini-cell strong {
+    color: #ffffff;
+    margin-right: 2px;
+}
