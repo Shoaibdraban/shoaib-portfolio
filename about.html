@@ -329,40 +329,132 @@
 <!-- Add Per-Class Performance Table -->
 <div class="thesis-performance">
     <h4>Per-Class Performance on Real Data</h4>
-    <table class="performance-table">
-        <thead>
-            <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1-Score</th></tr>
-        </thead>
-        <tbody>
-            <tr><td>N (Normal)</td><td>99%</td><td>99%</td><td><strong>99%</strong></td></tr>
-            <tr><td>S (Supraventricular)</td><td>93%</td><td>79%</td><td><strong>85%</strong></td></tr>
-            <tr><td>V (Ventricular)</td><td>96%</td><td>97%</td><td><strong>96%</strong></td></tr>
-            <tr><td>F (Fusion)</td><td>89%</td><td>81%</td><td><strong>85%</strong></td></tr>
-            <tr><td>Q (Unknown)</td><td>96%</td><td>99%</td><td><strong>97%</strong></td></tr>
-        </tbody>
-    </table>
+    <table class="performance-table"><div class="thesis-description">
+
+    <p>
+        Developed a lightweight hybrid CNN-Transformer model for
+        multi-class arrhythmia detection, optimized for
+        resource-constrained healthcare settings like rural Pakistan.
+        Successfully bridged the synthetic-real domain gap through transfer learning.
+    </p>
+
+    <p class="thesis-highlight">
+        ✅ <strong>Achieved 98.40% accuracy</strong> on real MIT-BIH data with
+        <strong>203,461 parameters</strong> (530× fewer than comparable models),
+        <strong>0.79 MB model size</strong> (44% smaller), and
+        <strong>5.84 ms inference time</strong> on CPU.
+    </p>
+
 </div>
-                            </div>
 
-                            <div class="thesis-tech">
+<!-- =========================================
+     RESULTS BADGES
+     ========================================= -->
 
-                                <span class="tech-label">Technologies:</span>
+<div class="thesis-results-badges">
+    <span class="result-badge accuracy">🏆 98.40% Accuracy</span>
+    <span class="result-badge f1">📊 98.39% F1-Score</span>
+    <span class="result-badge vclass">❤️ 96.31% V-Class F1</span>
+    <span class="result-badge size">⚡ 0.79 MB Model</span>
+    <span class="result-badge data">🩻 Real MIT-BIH Data</span>
+</div>
 
-                                <div class="tech-tags">
+<!-- =========================================
+     PER-CLASS PERFORMANCE TABLE
+     ========================================= -->
 
-                                    <span class="tech-tag">Python</span>
-                                    <span class="tech-tag">TensorFlow</span>
-                                    <span class="tech-tag">Keras</span>
-                                    <span class="tech-tag">PyTorch</span>
-                                    <span class="tech-tag">Scikit-learn</span>
-                                    <span class="tech-tag">NumPy</span>
-                                    <span class="tech-tag">SciPy</span>
-                                    <span class="tech-tag">Matplotlib</span>
-                                    <span class="tech-tag">Google Colab</span>
+<div class="thesis-performance">
+    <h4>Per-Class Performance on Real Data</h4>
+    <div class="table-wrapper">
+        <table class="performance-table">
+            <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>Type</th>
+                    <th>Precision</th>
+                    <th>Recall</th>
+                    <th>F1-Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>N</strong></td>
+                    <td>Normal</td>
+                    <td>99%</td>
+                    <td>99%</td>
+                    <td><strong>99%</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>S</strong></td>
+                    <td>Supraventricular</td>
+                    <td>93%</td>
+                    <td>79%</td>
+                    <td><strong>85%</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>V</strong></td>
+                    <td>Ventricular</td>
+                    <td>96%</td>
+                    <td>97%</td>
+                    <td><strong>96%</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>F</strong></td>
+                    <td>Fusion</td>
+                    <td>89%</td>
+                    <td>81%</td>
+                    <td><strong>85%</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Q</strong></td>
+                    <td>Unknown</td>
+                    <td>96%</td>
+                    <td>99%</td>
+                    <td><strong>97%</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 
-                                </div>
+<!-- =========================================
+     THESIS TECH (Same Rakhna Hai)
+     ========================================= -->
 
-                            </div>
+<div class="thesis-tech">
+
+    <span class="tech-label">Technologies:</span>
+
+    <div class="tech-tags">
+
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">TensorFlow</span>
+        <span class="tech-tag">Keras</span>
+        <span class="tech-tag">PyTorch</span>
+        <span class="tech-tag">Scikit-learn</span>
+        <span class="tech-tag">NumPy</span>
+        <span class="tech-tag">SciPy</span>
+        <span class="tech-tag">Matplotlib</span>
+        <span class="tech-tag">Google Colab</span>
+
+    </div>
+
+</div>
+
+<!-- =========================================
+     THESIS DATASET (Same Rakhna Hai)
+     ========================================= -->
+
+<div class="thesis-dataset">
+
+    <span class="dataset-label">📊 Dataset:</span>
+
+    <span class="dataset-text">
+        MIT-BIH Arrhythmia Database (50,000 synthetic heartbeats,
+        5 AAMI classes: N, S, V, F, Q) + Real MIT-BIH Data (101,362 beats) for validation
+    </span>
+
+</div>
 
                             <div class="thesis-dataset">
 
