@@ -224,10 +224,16 @@
             <div class="container">
 
                 <div class="portfolio-grid">
+<!-- =========================================
+     PROJECT 1: ECG-TRANSCOVNET — FEATURED
+     ========================================= -->
 
-                    <!-- PROJECT 1: ECG-TRANSCOVNET — MASTER'S THESIS -->
+<article class="portfolio-card portfolio-featured portfolio-thesis">
 
-<article class="portfolio-card portfolio-featured">
+    <div class="portfolio-thesis-badge">
+        <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+        Master's Thesis
+    </div>
 
     <div class="portfolio-icon" aria-hidden="true">
         <i class="fas fa-heart-pulse"></i>
@@ -235,15 +241,15 @@
 
     <div class="portfolio-content">
 
-        <span class="portfolio-category">⭐ MASTER'S THESIS • AI • RESEARCH</span>
+        <span class="portfolio-category">⭐ RESEARCH • HEALTHCARE AI</span>
 
         <h3>ECG-TransCovNet</h3>
 
         <p>
             A hybrid CNN-Transformer architecture developed for
             multi-class arrhythmia detection from ECG signals.
-            Achieved <strong>99% accuracy</strong> with only
-            0.35M parameters and 1.40 MB model size.
+            Successfully bridged synthetic-real domain gap through transfer learning,
+            achieving <strong>98.40% accuracy</strong> on real MIT-BIH data.
         </p>
 
         <!-- Thesis Meta -->
@@ -255,26 +261,51 @@
 
         <!-- Results Badges -->
         <div class="portfolio-results">
-            <span class="result-badge">🏆 99% Accuracy</span>
-            <span class="result-badge">⚡ 0.35M Parameters</span>
-            <span class="result-badge">📊 97.73% AUC</span>
-            <span class="result-badge">🩻 MIT-BIH Database</span>
+            <span class="result-badge thesis-badge-gold">🏆 98.40% Accuracy</span>
+            <span class="result-badge thesis-badge-blue">📊 98.39% F1-Score</span>
+            <span class="result-badge thesis-badge-pink">❤️ 96.31% V-Class F1</span>
+            <span class="result-badge thesis-badge-purple">⚡ 0.79 MB Model</span>
+            <span class="result-badge thesis-badge-yellow">🩻 Real MIT-BIH Data</span>
+            <span class="result-badge thesis-badge-green">📈 70.49% Improvement</span>
+        </div>
+
+        <!-- Key Achievements -->
+        <div class="portfolio-achievements">
+            <span class="achievement-item">✅ 530× fewer parameters than Liu [10]</span>
+            <span class="achievement-item">✅ 44% smaller than original</span>
+            <span class="achievement-item">✅ Explainable AI with Grad-CAM</span>
+        </div>
+
+        <!-- Per-Class Performance -->
+        <div class="portfolio-mini-table">
+            <p class="mini-table-label">Per-Class F1-Scores:</p>
+            <div class="mini-table-grid">
+                <span class="mini-cell"><strong>N</strong> 99%</span>
+                <span class="mini-cell"><strong>S</strong> 85%</span>
+                <span class="mini-cell"><strong>V</strong> 96%</span>
+                <span class="mini-cell"><strong>F</strong> 85%</span>
+                <span class="mini-cell"><strong>Q</strong> 97%</span>
+            </div>
         </div>
 
         <div class="portfolio-tags">
             <span>Python</span>
             <span>TensorFlow</span>
-            <span>PyTorch</span>
             <span>CNN</span>
             <span>Transformer</span>
+            <span>Grad-CAM</span>
+            <span>Healthcare AI</span>
         </div>
 
         <div class="portfolio-links">
-            <a href="https://drive.google.com/file/d/1r264BFh_MvJI9LzH4wZSjsFltoHq22oy/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-                <i class="fas fa-file-alt" aria-hidden="true"></i> View Thesis
+            <a href="https://github.com/Shoaibdraban/ECG-TransCovNet" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                <i class="fab fa-github" aria-hidden="true"></i> GitHub
             </a>
-            <a href="https://github.com/Shoaibdraban/ECG-TransCovNet" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
-                <i class="fab fa-github" aria-hidden="true"></i> Code
+            <a href="https://github.com/Shoaibdraban/ECG-TransCovNet/blob/main/thesis/Final%20ECG-TransCovNet%20for%20Arrhythmia%20Detection.pdf" target="_blank" class="btn btn-outline btn-sm">
+                <i class="fas fa-file-alt" aria-hidden="true"></i> Thesis PDF
+            </a>
+            <a href="https://huggingface.co/Shoaibdraban/ECG-TransCovNet" target="_blank" class="btn btn-outline btn-sm">
+                <i class="fas fa-cloud" aria-hidden="true"></i> Hugging Face
             </a>
         </div>
 
