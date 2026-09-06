@@ -311,11 +311,37 @@
                                 </p>
 
                                 <p class="thesis-highlight">
-                                    ✅ <strong>Achieved 99% accuracy</strong> with only
-                                    0.35M parameters, 1.40 MB model size, and
-                                    5.84 ms inference time on CPU.
-                                </p>
+    ✅ <strong>Achieved 98.40% accuracy on real MIT-BIH data</strong> with only
+    <strong>203,461 parameters</strong> (530× fewer than comparable models),
+    <strong>0.79 MB model size</strong> (44% smaller), and
+    <strong>5.84 ms inference time</strong> on CPU.
+</p>
 
+<!-- Add Results Badges -->
+<div class="thesis-results-badges">
+    <span class="result-badge">🏆 98.40% Accuracy</span>
+    <span class="result-badge">📊 98.39% F1-Score</span>
+    <span class="result-badge">❤️ 96.31% V-Class F1</span>
+    <span class="result-badge">⚡ 0.79 MB Model</span>
+    <span class="result-badge">🩻 Real MIT-BIH Data</span>
+</div>
+
+<!-- Add Per-Class Performance Table -->
+<div class="thesis-performance">
+    <h4>Per-Class Performance on Real Data</h4>
+    <table class="performance-table">
+        <thead>
+            <tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1-Score</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>N (Normal)</td><td>99%</td><td>99%</td><td><strong>99%</strong></td></tr>
+            <tr><td>S (Supraventricular)</td><td>93%</td><td>79%</td><td><strong>85%</strong></td></tr>
+            <tr><td>V (Ventricular)</td><td>96%</td><td>97%</td><td><strong>96%</strong></td></tr>
+            <tr><td>F (Fusion)</td><td>89%</td><td>81%</td><td><strong>85%</strong></td></tr>
+            <tr><td>Q (Unknown)</td><td>96%</td><td>99%</td><td><strong>97%</strong></td></tr>
+        </tbody>
+    </table>
+</div>
                             </div>
 
                             <div class="thesis-tech">
