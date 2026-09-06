@@ -5469,3 +5469,71 @@ main {
         font-size: 22px;
     }
 }
+/* Force image to top-left on desktop */
+.about-page {
+    padding: 40px 0;
+}
+
+.about-page-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;  /* Align to top instead of center */
+}
+
+.about-image-wrapper {
+    position: sticky;
+    top: 100px;  /* Image stays visible while scrolling */
+    align-self: start;
+}
+
+.about-image-box {
+    max-width: 400px;
+    margin: 0;
+}
+
+.about-image {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+}
+
+/* Floating stats below image */
+.about-floating-stats {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    max-width: 400px;
+}
+
+.about-stat-item {
+    flex: 1;
+    text-align: center;
+    padding: 14px 10px;
+    background: rgba(7, 25, 48, 0.95);
+    border: 1px solid rgba(0, 174, 255, 0.25);
+    border-radius: 12px;
+}
+
+/* Mobile */
+@media (max-width: 1000px) {
+    .about-page-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .about-image-wrapper {
+        position: relative;
+        top: 0;
+    }
+    
+    .about-image-box {
+        margin: 0 auto;
+        max-width: 320px;
+    }
+    
+    .about-floating-stats {
+        margin: 15px auto 0;
+        justify-content: center;
+    }
+}
