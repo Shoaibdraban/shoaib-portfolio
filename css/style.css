@@ -4947,3 +4947,150 @@ main {
 /* =====================================================
    END OF STYLESHEET
    ===================================================== */
+
+/* =====================================================
+   THESIS RESULTS BADGES & PERFORMANCE TABLE
+   ===================================================== */
+
+/* Results Badges */
+.thesis-results-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 12px 0 18px;
+}
+
+.thesis-results-badges .result-badge {
+    padding: 5px 14px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.thesis-results-badges .result-badge:hover {
+    transform: translateY(-2px);
+}
+
+.result-badge.accuracy {
+    background: rgba(16, 185, 129, 0.12);
+    border-color: rgba(16, 185, 129, 0.2);
+    color: #34d399;
+}
+
+.result-badge.f1 {
+    background: rgba(59, 130, 246, 0.12);
+    border-color: rgba(59, 130, 246, 0.2);
+    color: #60a5fa;
+}
+
+.result-badge.vclass {
+    background: rgba(236, 72, 153, 0.12);
+    border-color: rgba(236, 72, 153, 0.2);
+    color: #f472b6;
+}
+
+.result-badge.size {
+    background: rgba(139, 92, 246, 0.12);
+    border-color: rgba(139, 92, 246, 0.2);
+    color: #a78bfa;
+}
+
+.result-badge.data {
+    background: rgba(251, 191, 36, 0.12);
+    border-color: rgba(251, 191, 36, 0.2);
+    color: #fbbf24;
+}
+
+/* Performance Table */
+.thesis-performance {
+    margin: 16px 0 20px;
+}
+
+.thesis-performance h4 {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    margin: 10px 0 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 174, 255, 0.08);
+}
+
+.performance-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    background: rgba(7, 25, 48, 0.4);
+    min-width: 480px;
+}
+
+.performance-table thead {
+    background: rgba(0, 191, 255, 0.08);
+}
+
+.performance-table th {
+    padding: 10px 16px;
+    text-align: left;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    border-bottom: 2px solid rgba(0, 191, 255, 0.1);
+}
+
+.performance-table th:nth-child(3),
+.performance-table th:nth-child(4),
+.performance-table th:nth-child(5) {
+    text-align: center;
+}
+
+.performance-table td {
+    padding: 9px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    color: var(--text-light);
+    font-size: 13px;
+}
+
+.performance-table td:first-child {
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.performance-table td:nth-child(2) {
+    color: var(--text-muted);
+}
+
+.performance-table td:nth-child(3),
+.performance-table td:nth-child(4),
+.performance-table td:nth-child(5) {
+    text-align: center;
+}
+
+.performance-table td strong {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.performance-table tr:hover td {
+    background: rgba(0, 191, 255, 0.03);
+}
+
+.performance-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Thesis Dataset Updated */
+.thesis-dataset {
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    color: var(--text-light);
+}
