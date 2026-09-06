@@ -5094,3 +5094,219 @@ main {
     font-size: 13px;
     color: var(--text-light);
 }
+/* =====================================================
+   PERFORMANCE TABLE - DESKTOP & MOBILE FIXED
+   ===================================================== */
+
+.table-wrapper {
+    overflow-x: auto;
+    margin: 12px 0 18px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 174, 255, 0.08);
+    background: rgba(7, 25, 48, 0.3);
+}
+
+.performance-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    background: transparent;
+    min-width: 500px;
+}
+
+/* Table Header */
+.performance-table thead {
+    background: rgba(0, 191, 255, 0.06);
+}
+
+.performance-table thead tr {
+    border-bottom: 2px solid rgba(0, 191, 255, 0.1);
+}
+
+.performance-table th {
+    padding: 12px 18px;
+    text-align: left;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Center align numeric columns */
+.performance-table th:nth-child(3),
+.performance-table th:nth-child(4),
+.performance-table th:nth-child(5) {
+    text-align: center;
+}
+
+/* Table Body */
+.performance-table tbody tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.performance-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.performance-table td {
+    padding: 10px 18px;
+    color: var(--text-light);
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+/* Class column (first column) */
+.performance-table td:first-child {
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+/* Type column (second column) */
+.performance-table td:nth-child(2) {
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+/* Numeric columns (Precision, Recall, F1) */
+.performance-table td:nth-child(3),
+.performance-table td:nth-child(4),
+.performance-table td:nth-child(5) {
+    text-align: center;
+    font-weight: 500;
+}
+
+/* F1-Score column */
+.performance-table td:nth-child(5) {
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* Hover effect */
+.performance-table tbody tr:hover {
+    background: rgba(0, 191, 255, 0.04);
+}
+
+/* Highlight best F1 score per row */
+.performance-table td:nth-child(5) strong {
+    color: #34d399;
+}
+
+.performance-table td:nth-child(5) {
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* Mobile Responsive */
+@media (max-width: 650px) {
+    .performance-table {
+        font-size: 12px;
+        min-width: 400px;
+    }
+    
+    .performance-table th {
+        padding: 8px 12px;
+        font-size: 10px;
+    }
+    
+    .performance-table td {
+        padding: 7px 12px;
+        font-size: 11px;
+    }
+    
+    .performance-table td:first-child {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    .performance-table {
+        min-width: 340px;
+        font-size: 11px;
+    }
+    
+    .performance-table th {
+        padding: 6px 8px;
+        font-size: 9px;
+    }
+    
+    .performance-table td {
+        padding: 5px 8px;
+        font-size: 10px;
+    }
+}
+/* =====================================================
+   RESULTS BADGES - DESKTOP & MOBILE FIXED
+   ===================================================== */
+
+.thesis-results-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 14px 0 20px;
+}
+
+.thesis-results-badges .result-badge {
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    white-space: nowrap;
+}
+
+.thesis-results-badges .result-badge:hover {
+    transform: translateY(-2px);
+}
+
+/* Badge Colors */
+.result-badge.accuracy {
+    background: rgba(16, 185, 129, 0.12);
+    border-color: rgba(16, 185, 129, 0.2);
+    color: #34d399;
+}
+
+.result-badge.f1 {
+    background: rgba(59, 130, 246, 0.12);
+    border-color: rgba(59, 130, 246, 0.2);
+    color: #60a5fa;
+}
+
+.result-badge.vclass {
+    background: rgba(236, 72, 153, 0.12);
+    border-color: rgba(236, 72, 153, 0.2);
+    color: #f472b6;
+}
+
+.result-badge.size {
+    background: rgba(139, 92, 246, 0.12);
+    border-color: rgba(139, 92, 246, 0.2);
+    color: #a78bfa;
+}
+
+.result-badge.data {
+    background: rgba(251, 191, 36, 0.12);
+    border-color: rgba(251, 191, 36, 0.2);
+    color: #fbbf24;
+}
+
+/* Mobile Responsive - Badges */
+@media (max-width: 650px) {
+    .thesis-results-badges {
+        gap: 6px;
+    }
+    
+    .thesis-results-badges .result-badge {
+        font-size: 10px;
+        padding: 4px 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .thesis-results-badges .result-badge {
+        font-size: 9px;
+        padding: 3px 8px;
+    }
+}
