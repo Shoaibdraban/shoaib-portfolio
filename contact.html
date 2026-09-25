@@ -3,12 +3,7 @@
 
 <head>
 
-    <!-- =====================================================
-         BASIC META
-         ===================================================== -->
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
@@ -18,83 +13,36 @@
         content="Contact Muhammad Shoaib, Shahzain Computer Academy Contact, DIT Admission, IT Training, Web Development, AI Research, Computer Courses">
 
     <meta name="author" content="Muhammad Shoaib">
-
     <meta name="robots" content="index, follow">
-
-    <!-- =====================================================
-         CANONICAL URL
-         ===================================================== -->
 
     <link rel="canonical" href="https://shoaibdraban-portfolio.netlify.app/contact.html">
 
-    <!-- =====================================================
-         OPEN GRAPH / SOCIAL SHARING
-         ===================================================== -->
-
     <meta property="og:type" content="website">
-
     <meta property="og:title" content="Contact Muhammad Shoaib | AI, Research & Web Development">
-
     <meta property="og:description"
         content="Get in touch with Muhammad Shoaib for AI research, web development, computer education, and Shahzain Computer Academy admissions.">
-
     <meta property="og:url" content="https://shoaibdraban-portfolio.netlify.app/contact.html">
-
     <meta property="og:image" content="https://shoaibdraban-portfolio.netlify.app/images/poster1.png">
-
     <meta property="og:site_name" content="Muhammad Shoaib">
 
-    <!-- =====================================================
-         TWITTER CARD
-         ===================================================== -->
-
     <meta name="twitter:card" content="summary_large_image">
-
     <meta name="twitter:title" content="Contact Muhammad Shoaib | AI, Research & Web Development">
-
     <meta name="twitter:description"
         content="Get in touch with Muhammad Shoaib for AI research, web development, computer education, and Shahzain Computer Academy admissions.">
-
     <meta name="twitter:image" content="https://shoaibdraban-portfolio.netlify.app/images/poster1.png">
-
-    <!-- =====================================================
-         PAGE TITLE
-         ===================================================== -->
 
     <title>Contact | Muhammad Shoaib — IT, AI & Education</title>
 
-
-    <!-- =====================================================
-         GOOGLE FONTS
-         ===================================================== -->
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
         rel="stylesheet">
 
-
-    <!-- =====================================================
-         FONT AWESOME
-         ===================================================== -->
-
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-
-    <!-- =====================================================
-         FAVICON
-         ===================================================== -->
-
     <link rel="icon" type="image/png" href="images/favicon.png">
-
-
-    <!-- =====================================================
-         MAIN CSS
-         ===================================================== -->
 
     <link rel="stylesheet" href="css/style.css">
 
@@ -103,42 +51,41 @@
 
 <body>
 
+    <div class="scroll-progress" id="scroll-progress"></div>
 
-    <!-- =====================================================
-         HEADER
-         ===================================================== -->
+    <div class="page-loader" id="page-loader">
+        <div class="loader-content">
+            <div class="loader-logo">M<span>.</span> Shoaib</div>
+            <div class="loader-bar">
+                <div class="loader-bar-fill"></div>
+            </div>
+        </div>
+    </div>
+
 
     <header class="header">
 
         <div class="container nav-container">
 
-            <!-- LOGO -->
-
             <a href="index.html" class="logo" aria-label="Muhammad Shoaib Home">
                 <span>M.</span> Shoaib
             </a>
 
-
-            <!-- NAVIGATION -->
-
             <nav class="navbar" id="navbar" aria-label="Main Navigation">
 
                 <a href="index.html">Home</a>
-
                 <a href="about.html">About</a>
-
                 <a href="services.html">Services</a>
-
                 <a href="academy.html">Academy</a>
-
                 <a href="portfolio.html">Portfolio</a>
-
                 <a href="contact.html" class="active" aria-current="page">Contact</a>
 
+                <!-- THEME TOGGLE -->
+                <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle Theme">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+
             </nav>
-
-
-            <!-- MOBILE MENU BUTTON -->
 
             <button class="menu-btn" id="menu-btn" type="button"
                 aria-label="Open Menu" aria-controls="navbar" aria-expanded="false">
@@ -153,16 +100,7 @@
 
 
 
-    <!-- =====================================================
-         MAIN CONTENT
-         ===================================================== -->
-
     <main>
-
-
-        <!-- =================================================
-             PAGE HEADER
-             ================================================= -->
 
         <section class="page-header" aria-labelledby="contact-page-title">
 
@@ -187,19 +125,11 @@
 
 
 
-        <!-- =================================================
-             CONTACT SECTION
-             ================================================= -->
-
         <section class="contact-section section-padding" aria-labelledby="contact-section-title">
 
             <div class="container">
 
                 <div class="contact-grid">
-
-                    <!-- =========================================
-                         CONTACT INFORMATION
-                         ========================================= -->
 
                     <div class="contact-info">
 
@@ -214,8 +144,6 @@
                             to hear from you.
                         </p>
 
-                        <!-- EMAIL -->
-
                         <div class="contact-item">
 
                             <div class="contact-icon" aria-hidden="true">
@@ -228,8 +156,6 @@
                             </div>
 
                         </div>
-
-                        <!-- PHONE -->
 
                         <div class="contact-item">
 
@@ -244,8 +170,6 @@
 
                         </div>
 
-                        <!-- LOCATION -->
-
                         <div class="contact-item">
 
                             <div class="contact-icon" aria-hidden="true">
@@ -258,8 +182,6 @@
                             </div>
 
                         </div>
-
-                        <!-- WHATSAPP -->
 
                         <div class="contact-item">
 
@@ -274,8 +196,6 @@
 
                         </div>
 
-                        <!-- WORKING HOURS -->
-
                         <div class="contact-item">
 
                             <div class="contact-icon" aria-hidden="true">
@@ -289,15 +209,12 @@
 
                         </div>
 
-                        <!-- SOCIAL LINKS -->
-
                         <div class="contact-social">
 
                             <h3>Connect With Me</h3>
 
                             <div class="social-links">
 
-                                <!-- Replace # with actual URLs -->
                                 <a href="https://github.com/Shoaibdraban/portfolio-website" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
                                     <i class="fab fa-github" aria-hidden="true"></i>
                                 </a>
@@ -326,10 +243,6 @@
 
                     </div>
 
-                    <!-- =========================================
-                         CONTACT FORM (Netlify)
-                         ========================================= -->
-
                     <div class="contact-form-wrapper">
 
                         <div class="contact-form-header">
@@ -343,10 +256,7 @@
                         <form class="contact-form" id="contact-form"
                             data-netlify="true" name="contact" method="POST" netlify>
 
-                            <!-- Netlify hidden field -->
                             <input type="hidden" name="form-name" value="contact">
-
-                            <!-- NAME -->
 
                             <div class="form-group">
 
@@ -357,8 +267,6 @@
 
                             </div>
 
-                            <!-- EMAIL -->
-
                             <div class="form-group">
 
                                 <label for="email">Email Address</label>
@@ -367,8 +275,6 @@
                                     placeholder="Enter your email" autocomplete="email" required>
 
                             </div>
-
-                            <!-- SUBJECT -->
 
                             <div class="form-group">
 
@@ -394,8 +300,6 @@
 
                             </div>
 
-                            <!-- MESSAGE -->
-
                             <div class="form-group">
 
                                 <label for="message">Your Message</label>
@@ -405,13 +309,9 @@
 
                             </div>
 
-                            <!-- Honeypot (anti-spam) -->
-
                             <div style="position:absolute;left:-9999px;top:-9999px;">
                                 <label>Don't fill this out: <input type="text" name="bot-field"></label>
                             </div>
-
-                            <!-- SUBMIT -->
 
                             <button type="submit" class="btn btn-primary">
 
@@ -420,8 +320,6 @@
                                 <i class="fas fa-paper-plane" aria-hidden="true"></i>
 
                             </button>
-
-                            <!-- FORM NOTE -->
 
                             <p class="form-note">
 
@@ -442,10 +340,6 @@
         </section>
 
 
-
-        <!-- =================================================
-             ACADEMY CTA
-             ================================================= -->
 
         <section class="cta section-padding" aria-labelledby="academy-cta-title">
 
@@ -478,15 +372,9 @@
 
 
 
-    <!-- =====================================================
-         FOOTER
-         ===================================================== -->
-
     <footer class="footer">
 
         <div class="container footer-content">
-
-            <!-- FOOTER BRAND -->
 
             <div class="footer-brand">
 
@@ -498,23 +386,15 @@
 
             </div>
 
-            <!-- FOOTER NAVIGATION -->
-
             <nav class="footer-links" aria-label="Footer Navigation">
 
                 <a href="about.html">About</a>
-
                 <a href="services.html">Services</a>
-
                 <a href="academy.html">Academy</a>
-
                 <a href="portfolio.html">Portfolio</a>
-
                 <a href="contact.html" aria-current="page">Contact</a>
 
             </nav>
-
-            <!-- COPYRIGHT -->
 
             <p class="copyright">
 
@@ -528,12 +408,7 @@
 
 
 
-    <!-- =====================================================
-         JAVASCRIPT
-         ===================================================== -->
-
     <script src="js/script.js"></script>
-
 
 </body>
 
