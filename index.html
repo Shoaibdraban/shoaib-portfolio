@@ -51,7 +51,7 @@
          PAGE TITLE
          ===================================================== -->
 
-         <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230D1B2A'/><text x='50' y='72' font-size='50' text-anchor='middle' fill='%2300BFFF' font-family='Arial, sans-serif' font-weight='bold'>MS</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230D1B2A'/><text x='50' y='72' font-size='50' text-anchor='middle' fill='%2300BFFF' font-family='Arial, sans-serif' font-weight='bold'>MS</text></svg>">
 
     <title>Muhammad Shoaib | AI • Research • Web Development</title>
 
@@ -95,6 +95,19 @@
 
 <body>
 
+    <!-- SCROLL PROGRESS BAR -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- PAGE LOADER -->
+    <div class="page-loader" id="page-loader">
+        <div class="loader-content">
+            <div class="loader-logo">M<span>.</span> Shoaib</div>
+            <div class="loader-bar">
+                <div class="loader-bar-fill"></div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- =====================================================
          HEADER
@@ -126,6 +139,11 @@
                 <a href="portfolio.html">Portfolio</a>
 
                 <a href="contact.html">Contact</a>
+
+                <!-- THEME TOGGLE — NAVBAR KE ANDAR -->
+                <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle Theme">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
 
             </nav>
 
@@ -211,16 +229,27 @@
                     <!-- DESCRIPTION -->
 
                     <p class="hero-description">
+    AI &amp; Machine Learning researcher with an MS in Computer Science
+    from Gomal University. My thesis — ECG-TransCovNet — achieved
+    <strong>91.39% accuracy</strong> on real MIT-BIH ECG data with a
+    deployable <strong>1.38 MB model</strong>.
 
-                        I work in Artificial Intelligence,
-                        Machine Learning, Research, Web Development
-                        and Computer Education.
+    I also work in Web Development and Computer Education, and help
+    students and researchers with thesis development, data analysis,
+    and machine learning projects.
+</p>
 
-                        I also help students and researchers with
-                        thesis development, data analysis and
-                        machine learning projects.
-
-                    </p>
+<div class="hero-highlights">
+    <span class="hero-highlight">
+        <i class="fas fa-graduation-cap"></i> MS Computer Science
+    </span>
+    <span class="hero-highlight">
+        <i class="fas fa-trophy"></i> 91.39% Thesis Accuracy
+    </span>
+    <span class="hero-highlight">
+        <i class="fas fa-rocket"></i> 170 KB INT8 Model
+    </span>
+</div>
 
                     <!-- BUTTONS -->
 
@@ -246,7 +275,6 @@
 
                     <div class="hero-social" aria-label="Social Media Links">
 
-                        <!-- Replace # with actual URLs -->
                         <a href="https://github.com/Shoaibdraban/portfolio-website" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                             <i class="fab fa-github" aria-hidden="true"></i>
                         </a>
