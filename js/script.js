@@ -17,7 +17,6 @@ if (menuBtn && navbar) {
 
         const isOpen = navbar.classList.toggle("show");
 
-        // Update aria-expanded
         menuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
 
         const icon = menuBtn.querySelector("i");
@@ -283,8 +282,6 @@ if (contactForm) {
             return;
         }
 
-        // Form submits to Netlify naturally
-
     });
 
 }
@@ -368,6 +365,104 @@ window.addEventListener("resize", () => {
         menuBtn.setAttribute("aria-label", "Open Menu");
 
     }
+
+});
+
+
+/* =====================================================
+   LEVEL 4: SCROLL PROGRESS + LOADER + BACK TO TOP
+   ===================================================== */
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    // ---- PAGE LOADER ----
+    const loader = document.getElementById('page-loader');
+    if (loader) {
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                loader.classList.add('hidden');
+            }, 800);
+        });
+
+        setTimeout(() => {
+            loader.classList.add('hidden');
+        }, 3000);
+    }
+
+    // ---- SCROLL PROGRESS BAR ----
+    const progressBar = document.getElementById('scroll-progress');
+    if (progressBar) {
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            progressBar.style.width = scrollPercent + '%';
+        }, { passive: true });
+    }
+
+    // ---- BACK TO TOP BUTTON ----
+    const backToTop = document.createElement('button');
+    backToTop.className = 'back-to-top';
+    backToTop.setAttribute('aria-label', 'Back to Top');
+    backToTop.innerHTML = '<i class="fas fa-arrow-up"></i>';
+    document.body.appendChild(backToTop);
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 500) {
+            backToTop.classList.add('visible');
+        } else {
+            backToTop.classList.remove('visible');
+        }
+    }, { passive: true });
+
+    backToTop.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+});
+
+
+/* =====================================================
+   LEVEL 5: THEME TOGGLE (DARK/LIGHT)
+   ===================================================== */
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+
+    if (!themeToggle) return;
+
+    // Check saved theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-theme');
+        if (themeIcon) {
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        }
+    }
+
+    themeToggle.addEventListener('click', function() {
+        document.body.classList.toggle('light-theme');
+
+        const isLight = document.body.classList.contains('light-theme');
+
+        if (themeIcon) {
+            if (isLight) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        }
+
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
 
 });
 
