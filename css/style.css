@@ -960,7 +960,7 @@ h1, h2, h3, p, a, span, small { overflow-wrap: break-word; }
 }
 
 /* =====================================================
-   ABOUT PAGE
+   ABOUT PAGE - MAIN GRID (FLEXBOX - FIXED)
    ===================================================== */
 
 .about-page {
@@ -969,29 +969,40 @@ h1, h2, h3, p, a, span, small { overflow-wrap: break-word; }
 }
 
 .about-page-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 50px;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
     min-height: 500px;
+    flex-wrap: wrap;
 }
 
+/* Image Wrapper */
 .about-image-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    flex: 0 0 38%;
+    width: 38%;
     height: 100%;
 }
 
+/* Image Box */
 .about-image-box {
     position: relative;
     width: 100%;
     max-width: 400px;
+    height: auto;
     border-radius: 20px;
     overflow: hidden;
     border: 1px solid rgba(0, 174, 255, 0.2);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+    align-self: center;
 }
 
 .about-image-glow {
@@ -1051,10 +1062,14 @@ h1, h2, h3, p, a, span, small { overflow-wrap: break-word; }
     margin-top: 2px;
 }
 
+/* Text Content */
 .about-text-content {
+    flex: 0 0 60%;
+    width: 60%;
     padding: 10px 0;
     text-align: left;
 }
+
 .about-text-content .section-label { margin-bottom: 8px; }
 .about-text-content h2 {
     font-family: "Poppins", sans-serif;
@@ -2513,20 +2528,6 @@ h1, h2, h3, p, a, span, small { overflow-wrap: break-word; }
 }
 
 /* =====================================================
-   RESPONSIVE — 1100px
-   ===================================================== */
-
-@media (max-width: 1100px) {
-    .navbar { gap: 24px; }
-    .hero-container { gap: 25px; }
-    .card-ai { left: -10px; }
-    .card-code { right: -10px; }
-    .card-research { left: -10px; }
-    .card-education { right: -10px; }
-    .floating-card { min-width: 205px; }
-}
-
-/* =====================================================
    RESPONSIVE — 1000px
    ===================================================== */
 
@@ -2562,14 +2563,21 @@ h1, h2, h3, p, a, span, small { overflow-wrap: break-word; }
     .card-research { left: -10px; bottom: 90px; }
     .card-education { right: -10px; bottom: 10px; }
 
-    /* About Page */
+    /* About Page - Stack on Tablet */
     .about-page-grid {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        text-align: center;
         gap: 40px;
+    }
+    .about-image-wrapper {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+    .about-text-content {
+        flex: 1 1 100%;
+        width: 100%;
         text-align: center;
     }
-    .about-image-wrapper { align-items: center; }
-    .about-text-content { text-align: center; }
     .about-skills { justify-content: center; }
     .about-floating-stats { justify-content: center; }
 
@@ -3243,6 +3251,7 @@ main {
     min-height: 0 !important;
     overflow: visible !important;
 }
+
 /* =====================================================
    THESIS PROJECT - SPECIAL STYLING
    ===================================================== */
@@ -3369,4 +3378,1336 @@ main {
 .mini-cell strong {
     color: #ffffff;
     margin-right: 2px;
+}
+/* =====================================================
+   FEATURED THESIS CARD — PROJECT 1 (PREMIUM)
+   ===================================================== */
+
+.portfolio-thesis-featured {
+    position: relative;
+    grid-column: span 2;
+    background: linear-gradient(145deg,
+        rgba(0, 174, 255, 0.08) 0%,
+        rgba(7, 25, 48, 0.95) 50%,
+        rgba(0, 119, 255, 0.05) 100%);
+    border: 2px solid rgba(0, 174, 255, 0.4);
+    box-shadow:
+        0 0 50px rgba(0, 174, 255, 0.12),
+        inset 0 0 60px rgba(0, 174, 255, 0.04);
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.portfolio-thesis-featured:hover {
+    transform: translateY(-10px);
+    border-color: rgba(0, 174, 255, 0.7);
+    box-shadow:
+        0 0 70px rgba(0, 174, 255, 0.25),
+        inset 0 0 60px rgba(0, 174, 255, 0.06);
+}
+
+/* Animated Glow Border */
+.portfolio-thesis-featured::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 18px;
+    background: linear-gradient(135deg,
+        #00bfff, #0077ff, #00bfff, #0077ff);
+    background-size: 300% 300%;
+    z-index: -1;
+    animation: gradientBorder 5s ease-in-out infinite;
+    opacity: 0.5;
+}
+
+@keyframes gradientBorder {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* FEATURED RIBBON */
+.thesis-ribbon {
+    position: absolute;
+    top: 20px;
+    right: -35px;
+    padding: 6px 40px;
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    color: #1a1a1a;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transform: rotate(45deg);
+    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.4);
+    z-index: 10;
+}
+
+.thesis-ribbon i {
+    margin-right: 4px;
+}
+
+/* HEADER */
+.thesis-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
+.thesis-icon {
+    width: 65px;
+    height: 65px;
+    min-width: 65px;
+    font-size: 28px;
+    background: linear-gradient(135deg,
+        rgba(0, 174, 255, 0.25),
+        rgba(0, 119, 255, 0.15)) !important;
+    border: 1px solid rgba(0, 174, 255, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 174, 255, 0.2);
+    animation: iconPulse 3s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+    0%, 100% { box-shadow: 0 8px 25px rgba(0, 174, 255, 0.2); }
+    50% { box-shadow: 0 8px 35px rgba(0, 174, 255, 0.4); }
+}
+
+.thesis-card-title {
+    flex: 1;
+    min-width: 0;
+}
+
+.thesis-card-title h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 6px 0 4px;
+    background: linear-gradient(135deg, #ffffff, #bdeeff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.thesis-subtitle {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* DESCRIPTION */
+.thesis-card-description {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* METRICS GRID */
+.thesis-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.thesis-metric {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 14px 10px;
+    background: rgba(0, 174, 255, 0.05);
+    border: 1px solid rgba(0, 174, 255, 0.12);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.thesis-metric:hover {
+    background: rgba(0, 174, 255, 0.12);
+    border-color: rgba(0, 174, 255, 0.35);
+    transform: translateY(-3px);
+}
+
+.metric-value {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #00bfff, #0077ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.2;
+}
+
+.metric-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+    text-align: center;
+}
+
+/* HIGHLIGHTS */
+.thesis-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.thesis-highlight-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 14px;
+    background: rgba(52, 211, 153, 0.1);
+    border: 1px solid rgba(52, 211, 153, 0.25);
+    border-radius: 50px;
+    font-size: 11px;
+    color: #34d399;
+    font-weight: 500;
+}
+
+.thesis-highlight-badge i {
+    font-size: 12px;
+}
+
+/* LINKS */
+.thesis-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.thesis-btn-primary {
+    background: linear-gradient(135deg, #00bfff, #0077ff);
+    box-shadow: 0 8px 25px rgba(0, 174, 255, 0.3);
+}
+
+.thesis-btn-primary:hover {
+    box-shadow: 0 12px 35px rgba(0, 174, 255, 0.5);
+    transform: translateY(-3px);
+}
+
+.thesis-btn-outline {
+    border-color: rgba(0, 174, 255, 0.3);
+    color: var(--primary);
+}
+
+.thesis-btn-outline:hover {
+    background: rgba(0, 174, 255, 0.08);
+    border-color: var(--primary);
+}
+
+/* =====================================================
+   RESPONSIVE — FEATURED THESIS CARD
+   ===================================================== */
+
+@media (max-width: 1000px) {
+    .portfolio-thesis-featured {
+        grid-column: span 1;
+    }
+    .thesis-metrics-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .thesis-card-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+    }
+    .thesis-card-title h3 {
+        font-size: 20px;
+    }
+    .thesis-metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .metric-value {
+        font-size: 17px;
+    }
+    .metric-label {
+        font-size: 10px;
+    }
+    .thesis-ribbon {
+        top: 12px;
+        right: -38px;
+        padding: 4px 40px;
+        font-size: 9px;
+    }
+    .thesis-links {
+        flex-direction: column;
+        width: 100%;
+    }
+    .thesis-links .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 400px) {
+    .thesis-metrics-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+    .thesis-metric {
+        padding: 10px 6px;
+    }
+    .metric-value {
+        font-size: 15px;
+    }
+    .metric-label {
+        font-size: 9px;
+    }
+    .thesis-highlight-badge {
+        font-size: 10px;
+        padding: 4px 10px;
+    }
+}
+/* =====================================================
+   FEATURED THESIS CARD — PROJECT 1 (PREMIUM)
+   ===================================================== */
+
+.portfolio-thesis-featured {
+    position: relative;
+    grid-column: span 2;
+    background: linear-gradient(145deg,
+        rgba(0, 174, 255, 0.08) 0%,
+        rgba(7, 25, 48, 0.95) 50%,
+        rgba(0, 119, 255, 0.05) 100%);
+    border: 2px solid rgba(0, 174, 255, 0.4);
+    box-shadow:
+        0 0 50px rgba(0, 174, 255, 0.12),
+        inset 0 0 60px rgba(0, 174, 255, 0.04);
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.portfolio-thesis-featured:hover {
+    transform: translateY(-10px);
+    border-color: rgba(0, 174, 255, 0.7);
+    box-shadow:
+        0 0 70px rgba(0, 174, 255, 0.25),
+        inset 0 0 60px rgba(0, 174, 255, 0.06);
+}
+
+/* Animated Glow Border */
+.portfolio-thesis-featured::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 18px;
+    background: linear-gradient(135deg,
+        #00bfff, #0077ff, #00bfff, #0077ff);
+    background-size: 300% 300%;
+    z-index: -1;
+    animation: gradientBorder 5s ease-in-out infinite;
+    opacity: 0.5;
+}
+
+@keyframes gradientBorder {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* FEATURED RIBBON */
+.thesis-ribbon {
+    position: absolute;
+    top: 20px;
+    right: -35px;
+    padding: 6px 40px;
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    color: #1a1a1a;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transform: rotate(45deg);
+    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.4);
+    z-index: 10;
+}
+
+.thesis-ribbon i {
+    margin-right: 4px;
+}
+
+/* HEADER */
+.thesis-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
+.thesis-icon {
+    width: 65px;
+    height: 65px;
+    min-width: 65px;
+    font-size: 28px;
+    background: linear-gradient(135deg,
+        rgba(0, 174, 255, 0.25),
+        rgba(0, 119, 255, 0.15)) !important;
+    border: 1px solid rgba(0, 174, 255, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 174, 255, 0.2);
+    animation: iconPulse 3s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+    0%, 100% { box-shadow: 0 8px 25px rgba(0, 174, 255, 0.2); }
+    50% { box-shadow: 0 8px 35px rgba(0, 174, 255, 0.4); }
+}
+
+.thesis-card-title {
+    flex: 1;
+    min-width: 0;
+}
+
+.thesis-card-title h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 6px 0 4px;
+    background: linear-gradient(135deg, #ffffff, #bdeeff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.thesis-subtitle {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* DESCRIPTION */
+.thesis-card-description {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* METRICS GRID */
+.thesis-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.thesis-metric {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 14px 10px;
+    background: rgba(0, 174, 255, 0.05);
+    border: 1px solid rgba(0, 174, 255, 0.12);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.thesis-metric:hover {
+    background: rgba(0, 174, 255, 0.12);
+    border-color: rgba(0, 174, 255, 0.35);
+    transform: translateY(-3px);
+}
+
+.metric-value {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #00bfff, #0077ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.2;
+}
+
+.metric-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+    text-align: center;
+}
+
+/* HIGHLIGHTS */
+.thesis-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.thesis-highlight-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 14px;
+    background: rgba(52, 211, 153, 0.1);
+    border: 1px solid rgba(52, 211, 153, 0.25);
+    border-radius: 50px;
+    font-size: 11px;
+    color: #34d399;
+    font-weight: 500;
+}
+
+.thesis-highlight-badge i {
+    font-size: 12px;
+}
+
+/* LINKS */
+.thesis-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.thesis-btn-primary {
+    background: linear-gradient(135deg, #00bfff, #0077ff);
+    box-shadow: 0 8px 25px rgba(0, 174, 255, 0.3);
+}
+
+.thesis-btn-primary:hover {
+    box-shadow: 0 12px 35px rgba(0, 174, 255, 0.5);
+    transform: translateY(-3px);
+}
+
+.thesis-btn-outline {
+    border-color: rgba(0, 174, 255, 0.3);
+    color: var(--primary);
+}
+
+.thesis-btn-outline:hover {
+    background: rgba(0, 174, 255, 0.08);
+    border-color: var(--primary);
+}
+
+/* =====================================================
+   SKILLS CATEGORIES — ENHANCED
+   ===================================================== */
+
+.skills-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.skill-category {
+    padding: 25px 28px;
+    background: rgba(7, 25, 48, 0.4);
+    border: 1px solid rgba(0, 174, 255, 0.1);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.skill-category:hover {
+    border-color: rgba(0, 174, 255, 0.25);
+    background: rgba(7, 25, 48, 0.6);
+}
+
+.skill-category-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(0, 174, 255, 0.1);
+}
+
+.skill-category-title i {
+    color: var(--primary);
+    font-size: 20px;
+}
+
+.skill-category .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+}
+
+.skill-category .skill-item {
+    padding: 14px 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.skill-category .skill-item:hover {
+    background: rgba(0, 174, 255, 0.08);
+    border-color: rgba(0, 174, 255, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 174, 255, 0.1);
+}
+
+.skill-category .skill-item i {
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.skill-category .skill-item span {
+    font-size: 11px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.3;
+}
+
+/* =====================================================
+   RESPONSIVE — FEATURED THESIS + SKILLS
+   ===================================================== */
+
+@media (max-width: 1000px) {
+    .portfolio-thesis-featured {
+        grid-column: span 1;
+    }
+    .thesis-metrics-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .skill-category .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .thesis-card-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+    }
+    .thesis-card-title h3 {
+        font-size: 20px;
+    }
+    .thesis-metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .metric-value {
+        font-size: 17px;
+    }
+    .metric-label {
+        font-size: 10px;
+    }
+    .thesis-ribbon {
+        top: 12px;
+        right: -38px;
+        padding: 4px 40px;
+        font-size: 9px;
+    }
+    .thesis-links {
+        flex-direction: column;
+        width: 100%;
+    }
+    .thesis-links .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    .skill-category {
+        padding: 20px 18px;
+    }
+    .skill-category-title {
+        font-size: 16px;
+        margin-bottom: 14px;
+        padding-bottom: 10px;
+    }
+    .skill-category .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+    .skill-category .skill-item {
+        padding: 10px 6px;
+    }
+    .skill-category .skill-item i {
+        font-size: 20px;
+        margin-bottom: 4px;
+    }
+    .skill-category .skill-item span {
+        font-size: 10px;
+    }
+    .skills-categories {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .thesis-metrics-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+    .thesis-metric {
+        padding: 10px 6px;
+    }
+    .metric-value {
+        font-size: 15px;
+    }
+    .metric-label {
+        font-size: 9px;
+    }
+    .thesis-highlight-badge {
+        font-size: 10px;
+        padding: 4px 10px;
+    }
+    .skill-category .skills-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .skill-category .skill-item i {
+        font-size: 18px;
+    }
+    .skill-category .skill-item span {
+        font-size: 9px;
+    }
+}
+/* =====================================================
+   LEVEL 1: TYPOGRAPHY & SPACING POLISH
+   ===================================================== */
+
+/* Smooth Font Rendering */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* Better Heading Spacing */
+h1, h2, h3, h4 {
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+h1 { letter-spacing: -0.03em; }
+
+/* Better Paragraph Readability */
+p {
+    line-height: 1.75;
+    max-width: 75ch;
+}
+
+/* Improved Section Spacing */
+.section-padding {
+    padding: 120px 0;
+}
+
+@media (max-width: 650px) {
+    .section-padding {
+        padding: 80px 0;
+    }
+}
+
+/* Better Card Padding */
+.portfolio-card,
+.service-card,
+.course-card {
+    padding: 32px 28px;
+}
+
+@media (max-width: 650px) {
+    .portfolio-card,
+    .service-card,
+    .course-card {
+        padding: 24px 20px;
+    }
+}
+
+/* Smooth Scroll with Offset */
+html {
+    scroll-padding-top: 90px;
+}
+
+/* Selection Color */
+::selection {
+    background: rgba(0, 191, 255, 0.3);
+    color: #ffffff;
+}
+
+/* Focus States (Accessibility) */
+*:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* Better Link Transitions */
+a {
+    transition: color 0.25s ease, opacity 0.25s ease;
+}
+/* =====================================================
+   LEVEL 2: MICRO-ANIMATIONS
+   ===================================================== */
+
+/* Fade-In Up Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade-In Scale */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Slide In From Left */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Slide In From Right */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Pulse Glow */
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(0, 191, 255, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(0, 191, 255, 0.4);
+    }
+}
+
+/* Shimmer Effect */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* Apply Animations to Elements */
+.portfolio-card,
+.service-card,
+.course-card,
+.student-project-card,
+.mission-card,
+.why-academy-card {
+    animation: fadeInUp 0.6s ease-out backwards;
+}
+
+/* Staggered Animation Delays */
+.portfolio-grid > *:nth-child(1) { animation-delay: 0.05s; }
+.portfolio-grid > *:nth-child(2) { animation-delay: 0.1s; }
+.portfolio-grid > *:nth-child(3) { animation-delay: 0.15s; }
+.portfolio-grid > *:nth-child(4) { animation-delay: 0.2s; }
+.portfolio-grid > *:nth-child(5) { animation-delay: 0.25s; }
+.portfolio-grid > *:nth-child(6) { animation-delay: 0.3s; }
+
+/* Hero Elements Animation */
+.hero-badge { animation: fadeInUp 0.6s ease-out 0.1s backwards; }
+.hero-intro { animation: fadeInUp 0.6s ease-out 0.2s backwards; }
+.hero h1 { animation: fadeInUp 0.6s ease-out 0.3s backwards; }
+.hero h2 { animation: fadeInUp 0.6s ease-out 0.4s backwards; }
+.hero-description { animation: fadeInUp 0.6s ease-out 0.5s backwards; }
+.hero-buttons { animation: fadeInUp 0.6s ease-out 0.6s backwards; }
+.hero-social { animation: fadeInUp 0.6s ease-out 0.7s backwards; }
+
+/* Hero Visual Animation */
+.hero-visual {
+    animation: fadeInScale 0.8s ease-out 0.4s backwards;
+}
+
+/* Floating Cards Enhanced */
+.floating-card {
+    animation: float 4s ease-in-out infinite;
+}
+
+.card-ai { animation-delay: 0s; }
+.card-code { animation-delay: 0.5s; }
+.card-research { animation-delay: 1s; }
+.card-education { animation-delay: 1.5s; }
+
+/* Icon Pulse on Hover */
+.portfolio-icon,
+.service-icon,
+.course-icon {
+    transition: all 0.3s ease;
+}
+
+.portfolio-card:hover .portfolio-icon,
+.service-card:hover .service-icon,
+.course-card:hover .course-icon {
+    transform: scale(1.1) rotate(-5deg);
+    box-shadow: 0 8px 25px rgba(0, 191, 255, 0.3);
+}
+
+/* Button Shimmer on Hover */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+/* Skill Tag Pop on Hover */
+.skill-tag,
+.tech-tag,
+.portfolio-tags span {
+    transition: all 0.25s ease;
+}
+
+.skill-tag:hover,
+.tech-tag:hover,
+.portfolio-tags span:hover {
+    transform: translateY(-2px) scale(1.05);
+}
+/* =====================================================
+   LEVEL 3: ADVANCED HOVER EFFECTS
+   ===================================================== */
+
+/* 3D Card Tilt (Desktop) */
+@media (min-width: 1000px) {
+    .portfolio-card:not(.portfolio-thesis-featured),
+    .service-card,
+    .course-card {
+        transform-style: preserve-3d;
+        perspective: 1000px;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .portfolio-card:not(.portfolio-thesis-featured):hover,
+    .service-card:hover,
+    .course-card:hover {
+        transform: translateY(-10px) rotateX(2deg) rotateY(-2deg);
+        box-shadow:
+            0 25px 50px rgba(0, 0, 0, 0.3),
+            0 0 40px rgba(0, 191, 255, 0.15);
+    }
+}
+
+/* Border Glow on Hover */
+.portfolio-card:not(.portfolio-thesis-featured),
+.service-card,
+.course-card,
+.student-project-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-card:not(.portfolio-thesis-featured)::after,
+.service-card::after,
+.course-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg,
+        transparent 0%,
+        rgba(0, 191, 255, 0.4) 50%,
+        transparent 100%);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.portfolio-card:not(.portfolio-thesis-featured):hover::after,
+.service-card:hover::after,
+.course-card:hover::after {
+    opacity: 1;
+}
+
+/* Link Arrow Slide */
+.portfolio-link i,
+.service-card a i,
+.text-link i {
+    transition: transform 0.3s ease;
+}
+
+.portfolio-link:hover i,
+.service-card:hover a i,
+.text-link:hover i {
+    transform: translateX(6px);
+}
+
+/* Image Zoom on Hover */
+.about-image,
+.profile-photo {
+    transition: transform 0.5s ease;
+}
+
+.about-image-wrapper:hover .about-image {
+    transform: scale(1.03);
+}
+
+/* Stat Card Enhanced Hover */
+.stat-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle,
+        rgba(0, 191, 255, 0.15),
+        transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+    pointer-events: none;
+}
+
+.stat-card:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Ribbon Shine Effect */
+.thesis-ribbon {
+    position: absolute;
+    overflow: hidden;
+}
+
+.thesis-ribbon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+        transparent,
+        rgba(255, 255, 255, 0.5),
+        transparent);
+    animation: ribbonShine 3s ease-in-out infinite;
+}
+
+@keyframes ribbonShine {
+    0%, 100% { left: -100%; }
+    50% { left: 100%; }
+}
+
+/* Metric Value Glow */
+.thesis-metric:hover .metric-value {
+    text-shadow: 0 0 20px rgba(0, 191, 255, 0.6);
+}
+
+/* Social Icon Bounce */
+.hero-social a,
+.social-links a {
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.hero-social a:hover,
+.social-links a:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 191, 255, 0.3);
+}
+
+/* =====================================================
+   LEVEL 4: SCROLL PROGRESS + PAGE LOADER
+   ===================================================== */
+
+/* Scroll Progress Bar */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, #00bfff, #0077ff);
+    z-index: 9999;
+    transition: width 0.1s ease;
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+}
+
+/* Page Loader */
+.page-loader {
+    position: fixed;
+    inset: 0;
+    background: var(--background);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.page-loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.loader-logo {
+    font-family: "Poppins", sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 24px;
+    letter-spacing: -2px;
+}
+
+.loader-logo span {
+    color: var(--primary);
+}
+
+.loader-bar {
+    width: 200px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.loader-bar-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #00bfff, #0077ff);
+    animation: loaderFill 1.2s ease-out forwards;
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.6);
+}
+
+@keyframes loaderFill {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #00bfff, #0077ff);
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(0, 191, 255, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 999;
+    font-size: 18px;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 191, 255, 0.5);
+}
+
+@media (max-width: 650px) {
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 44px;
+        height: 44px;
+    }
+}
+
+[Existing CSS — 2500+ lines]
+...
+...
+...
+/* =====================================================
+   LEVEL 5: THEME TOGGLE (DARK/LIGHT)
+   ===================================================== */
+/* =====================================================
+   LEVEL 5: THEME TOGGLE (DARK/LIGHT)
+   ===================================================== */
+
+.theme-toggle {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+}
+
+.theme-toggle:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+    transform: rotate(20deg) scale(1.1);
+}
+
+/* Light Theme */
+body.light-theme {
+    --background: #f8fafc;
+    --background-light: #f1f5f9;
+    --card: #ffffff;
+    --card-light: #f8fafc;
+    --text: #0f172a;
+    --text-light: #475569;
+    --text-muted: #64748b;
+    --border: rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .header {
+    background: rgba(248, 250, 252, 0.9);
+}
+
+body.light-theme .footer {
+    background: #e2e8f0;
+}
+
+body.light-theme .hero-grid {
+    background-image:
+        linear-gradient(rgba(0, 119, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 119, 255, 0.05) 1px, transparent 1px);
+}
+
+body.light-theme .portfolio-thesis-featured {
+    background: linear-gradient(145deg,
+        rgba(0, 174, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.98) 50%,
+        rgba(0, 119, 255, 0.08) 100%);
+}
+
+body.light-theme .thesis-card-title h3 {
+    background: linear-gradient(135deg, #0f172a, #0077ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* =====================================================
+   HERO HIGHLIGHTS
+   ===================================================== */
+
+.hero-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 28px;
+}
+
+.hero-highlight {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(0, 191, 255, 0.08);
+    border: 1px solid rgba(0, 191, 255, 0.2);
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-light);
+    transition: all 0.3s ease;
+}
+
+.hero-highlight:hover {
+    background: rgba(0, 191, 255, 0.15);
+    border-color: rgba(0, 191, 255, 0.4);
+    transform: translateY(-2px);
+    color: #ffffff;
+}
+
+.hero-highlight i {
+    color: var(--primary);
+    font-size: 13px;
+}
+
+@media (max-width: 650px) {
+    .hero-highlights {
+        justify-content: center;
+        gap: 8px;
+    }
+    .hero-highlight {
+        font-size: 11px;
+        padding: 6px 12px;
+    }
+    .hero-highlight i {
+        font-size: 11px;
+    }
 }
