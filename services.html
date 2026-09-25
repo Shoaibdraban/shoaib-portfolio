@@ -3,12 +3,7 @@
 
 <head>
 
-    <!-- =====================================================
-         BASIC META
-         ===================================================== -->
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
@@ -18,83 +13,36 @@
         content="Muhammad Shoaib, AI services, Machine Learning, Web Development, Research, Thesis Development, Data Analysis, Computer Education">
 
     <meta name="author" content="Muhammad Shoaib">
-
     <meta name="robots" content="index, follow">
 
-    <!-- =====================================================
-         CANONICAL URL
-         ===================================================== -->
-
-    <link rel="canonical" href="https://YOUR-DOMAIN.com/services.html">
-
-    <!-- =====================================================
-         OPEN GRAPH / SOCIAL SHARING
-         ===================================================== -->
+    <link rel="canonical" href="https://shoaibdraban-portfolio.netlify.app/services.html">
 
     <meta property="og:type" content="website">
-
     <meta property="og:title" content="Services | Muhammad Shoaib — AI, Research & Web Development">
-
     <meta property="og:description"
         content="Professional AI, Machine Learning, Research, Thesis, Web Development, Data Analysis and Computer Education services by Muhammad Shoaib.">
-
-    <meta property="og:url" content="https://YOUR-DOMAIN.com/services.html">
-
-    <meta property="og:image" content="https://YOUR-DOMAIN.com/images/shoaib.png">
-
+    <meta property="og:url" content="https://shoaibdraban-portfolio.netlify.app/services.html">
+    <meta property="og:image" content="https://shoaibdraban-portfolio.netlify.app/images/poster1.png">
     <meta property="og:site_name" content="Muhammad Shoaib">
 
-    <!-- =====================================================
-         TWITTER CARD
-         ===================================================== -->
-
     <meta name="twitter:card" content="summary_large_image">
-
     <meta name="twitter:title" content="Services | Muhammad Shoaib — AI, Research & Web Development">
-
     <meta name="twitter:description"
         content="Professional AI, Machine Learning, Research, Thesis, Web Development, Data Analysis and Computer Education services.">
-
-    <meta name="twitter:image" content="https://YOUR-DOMAIN.com/images/shoaib.png">
-
-    <!-- =====================================================
-         PAGE TITLE
-         ===================================================== -->
+    <meta name="twitter:image" content="https://shoaibdraban-portfolio.netlify.app/images/poster1.png">
 
     <title>Services | Muhammad Shoaib — AI, Research & Web Development</title>
 
-
-    <!-- =====================================================
-         GOOGLE FONTS
-         ===================================================== -->
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
         rel="stylesheet">
 
-
-    <!-- =====================================================
-         FONT AWESOME
-         ===================================================== -->
-
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-
-    <!-- =====================================================
-         FAVICON
-         ===================================================== -->
-
     <link rel="icon" type="image/png" href="images/favicon.png">
-
-
-    <!-- =====================================================
-         MAIN CSS
-         ===================================================== -->
 
     <link rel="stylesheet" href="css/style.css">
 
@@ -102,6 +50,19 @@
 
 
 <body>
+
+    <!-- SCROLL PROGRESS BAR -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- PAGE LOADER -->
+    <div class="page-loader" id="page-loader">
+        <div class="loader-content">
+            <div class="loader-logo">M<span>.</span> Shoaib</div>
+            <div class="loader-bar">
+                <div class="loader-bar-fill"></div>
+            </div>
+        </div>
+    </div>
 
 
     <!-- =====================================================
@@ -124,16 +85,16 @@
             <nav class="navbar" id="navbar" aria-label="Main Navigation">
 
                 <a href="index.html">Home</a>
-
                 <a href="about.html">About</a>
-
                 <a href="services.html" class="active" aria-current="page">Services</a>
-
                 <a href="academy.html">Academy</a>
-
                 <a href="portfolio.html">Portfolio</a>
-
                 <a href="contact.html">Contact</a>
+
+                <!-- THEME TOGGLE — NAVBAR KE ANDAR -->
+                <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle Theme">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
 
             </nav>
 
@@ -159,11 +120,6 @@
 
     <main>
 
-
-        <!-- =================================================
-             PAGE HEADER
-             ================================================= -->
-
         <section class="page-header" aria-labelledby="services-title">
 
             <div class="container">
@@ -186,10 +142,6 @@
         </section>
 
 
-
-        <!-- =================================================
-             SERVICES SECTION
-             ================================================= -->
 
         <section class="services-page section-padding" aria-labelledby="services-heading">
 
@@ -397,10 +349,6 @@
 
 
 
-        <!-- =================================================
-             WHY WORK WITH ME
-             ================================================= -->
-
         <section class="why-section section-padding" aria-labelledby="why-heading">
 
             <div class="container">
@@ -491,10 +439,6 @@
 
 
 
-        <!-- =================================================
-             CTA SECTION
-             ================================================= -->
-
         <section class="cta section-padding" aria-labelledby="cta-heading">
 
             <div class="container">
@@ -533,8 +477,6 @@
 
         <div class="container footer-content">
 
-            <!-- FOOTER BRAND -->
-
             <div class="footer-brand">
 
                 <a href="index.html" class="logo" aria-label="Muhammad Shoaib Home">
@@ -545,23 +487,15 @@
 
             </div>
 
-            <!-- FOOTER NAVIGATION -->
-
             <nav class="footer-links" aria-label="Footer Navigation">
 
                 <a href="about.html">About</a>
-
                 <a href="services.html" aria-current="page">Services</a>
-
                 <a href="academy.html">Academy</a>
-
                 <a href="portfolio.html">Portfolio</a>
-
                 <a href="contact.html">Contact</a>
 
             </nav>
-
-            <!-- COPYRIGHT -->
 
             <p class="copyright">
 
@@ -575,12 +509,7 @@
 
 
 
-    <!-- =====================================================
-         JAVASCRIPT
-         ===================================================== -->
-
     <script src="js/script.js"></script>
-
 
 </body>
 
