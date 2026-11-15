@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "shahzain-computer-academy"
+  },
+  "targets": {
+    "shahzain-computer-academy": {
+      "hosting": {
+        "portfolio": [
+          "shoaib-personal-portfolio"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

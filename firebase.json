@@ -1,0 +1,20 @@
+
+{
+  "hosting": [
+    {
+      "target": "portfolio",
+      "public": ".",
+      "ignore": [
+        "firebase.json",
+        ".firebaserc",
+        ".gitignore",
+        "**/.*",
+        "**/node_modules/**",
+        "first.cpp",
+        "README.md",
+        "LICENSE",
+        "public/**"
+      ]
+    }
+  ]
+}
